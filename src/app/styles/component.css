@@ -1,0 +1,10 @@
+.text-sub {
+    color: var(--sub);
+}
+.section-title {
+    font-size: 38px;
+    font-weight: bold;
+}
+.bg-modal {
+    background: var(--modalBg);
+}

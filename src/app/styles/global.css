@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+
+:root {
+    --background: #ffffff;
+    --foreground: rgb(34, 34, 34);
+    --sub: #666;
+    --modalBg: rgba(0, 0, 0, 0.7);
+    --main-color: rgb(30, 215, 96);
+}

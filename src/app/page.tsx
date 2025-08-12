@@ -1,15 +1,17 @@
-import ContactSection from './_components/ContactSection';
-import HeroSection from './_components/HeroSection';
-import ProjectSection from './_components/ProjectSection';
-import SkillSection from './_components/SkillSection';
+import CarrerSection from './_components/section/CarrerSection';
+import ContactSection from './_components/section/ContactSection';
+import HeroSection from './_components/section/HeroSection';
+import ProjectSection from './_components/section/ProjectSection';
+import SkillSection from './_components/section/SkillSection';
 
-export default function Page() {
+export default function RootPage() {
     return (
-        <div>
+        <>
             <HeroSection />
+            <CarrerSection />
             <SkillSection />
             <ProjectSection />
             <ContactSection />
-        </div>
+        </>
     );
 }

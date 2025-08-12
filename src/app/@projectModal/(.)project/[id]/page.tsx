@@ -8,7 +8,7 @@ export default async function ProjectModal({ params }: { params?: Promise<{ id?:
     const project = projectDB.find((item) => item.id === Number(id));
 
     return (
-        <ModalContainer title="상세내용">
+        <ModalContainer title="상세내용" style="h-[600px]">
             <ProjectOverview project={project} />
             <ProjectDetail project={project} />
         </ModalContainer>

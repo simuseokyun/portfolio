@@ -7,11 +7,11 @@ export default function ContactModal() {
                 <p className="mb-2">전화번호 : 010-5212-8697</p>
                 <p className="mb-2">이메일 : sim31059999@gmail.com</p>
                 <p className="mb-2">
-                    깃허브 :
+                    깃허브 :&nbsp;
                     <Link
                         href="https://github.com/simuseokyun"
                         target="_blank"
-                        className="text-blue-500 hover:underline"
+                        className="text-blue-200 hover:underline"
                     >
                         @simuseokyun
                     </Link>

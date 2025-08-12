@@ -3,7 +3,70 @@
 :root {
     --background: #ffffff;
     --foreground: rgb(34, 34, 34);
-    --sub: #666;
+    --sub: #9ca3af;
     --modalBg: rgba(0, 0, 0, 0.7);
     --main-color: rgb(30, 215, 96);
+}
+[data-theme='dark'] {
+    --background: rgb(34, 34, 34);
+    --foreground: #ffffff;
+}
+
+.animate-float-up {
+    animation: float-up 2s ease-in-out infinite;
+}
+
+.animate-float-down {
+    animation: float-down 2s ease-in-out infinite;
+}
+@layer utilities {
+    .animate-slide-fade-in {
+        animation: slide-fade-in 1s ease-out forwards;
+    }
+    .animate-card-hover {
+        transition: transform 0.3s ease;
+    }
+
+    .hover\:animate-card-hover:hover {
+        animation: card-hover-up 0.3s ease forwards;
+    }
+}
+@keyframes float-up {
+    0%,
+    100% {
+        transform: translateY(-4px);
+    }
+    50% {
+        transform: translateY(4px);
+    }
+}
+
+@keyframes float-down {
+    0%,
+    100% {
+        transform: translateY(4px);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes slide-fade-in {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes card-hover-up {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-8px);
+    }
 }

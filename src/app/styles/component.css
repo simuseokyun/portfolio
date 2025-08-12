@@ -1,10 +1,29 @@
 .text-sub {
     color: var(--sub);
 }
+.text-gray {
+    color: #868e96;
+}
+.text-accent {
+    color: var(--main-color);
+}
 .section-title {
-    font-size: 38px;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 500;
+}
+.sub-title {
+    font-size: 20px;
+    font-weight: 600;
 }
 .bg-modal {
     background: var(--modalBg);
+}
+
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 18px;
+    }
+    .sub-title {
+        font-size: 24px;
+    }
 }

@@ -24,9 +24,9 @@ export default function CarrerDetail({ data }: { data: { title: string; year: st
                     <div
                         className={`w-full mt-2 bg-gray-100  p-2 rounded-md sm:max-w-[400px] ${theme === 'dark' ? 'bg-inherit border border-white' : ''}`}
                     >
-                        {content.map((content) => (
-                            <p key={content} className="text-sm">
-                                {content}
+                        {content?.map((content, index) => (
+                            <p key={content} className={`text-sm ${index && 'mt-1'}`}>
+                                &#8226; {content}
                             </p>
                         ))}
                     </div>

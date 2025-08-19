@@ -6,7 +6,7 @@ const projectDB: ProjectDB[] = [
         title: '음악 스트리밍 앱',
         description:
             'Spotify Web API를 활용해 사용자의 음악 데이터를 시각화하고,플레이리스트,아티스트 정보 등을 제공, 일정 시간 음악을 스트리밍할 수 있는 리액트 기반 웹 애플리케이션',
-        image: '/assets/project-one.webp',
+        image: '/assets/projectOne.webp',
         skill: {
             front: [
                 '/assets/React.svg',

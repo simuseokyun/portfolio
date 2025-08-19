@@ -55,13 +55,12 @@ const backendStackList: Stack[] = [
         name: 'Express',
         image: 'Express.svg',
         description:
-            '유연한 라우팅 시스템을 통해 REST API 서버를 구축할 수 있으며, 미들웨어를 활용한 요청 처리, 에러 핸들링, 인증 등의 백엔드 기능을 구현할 수 있습니다.',
+            'REST API 서버를 구축할 수 있으며, 미들웨어를 활용한 요청 처리, 에러 핸들링, 인증 등의 백엔드 기능을 구현할 수 있습니다.',
     },
     {
         name: 'GraphQL',
         image: 'GraphQL.svg',
-        description:
-            '클라이언트가 필요한 데이터만 선택적으로 요청할 수 있으며, Apollo Client와 함께 사용하여 효율적인 상태 관리와 데이터 캐싱을 구현할 수 있습니다',
+        description: 'Apollo Client와 함께 사용하여 효율적인 상태 관리와 데이터 캐싱을 구현할 수 있습니다',
     },
 ];
 const etcStackList: Stack[] = [

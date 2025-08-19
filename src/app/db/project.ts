@@ -12,7 +12,7 @@ const projectDB: ProjectDB[] = [
                 '/assets/React.svg',
                 '/assets/TypeScript.svg',
                 '/assets/Tailwind.svg',
-                '/assets/Tanstack-Query.png',
+                '/assets/TanstackQuery.png',
                 '/assets/Zustand.webp',
             ],
             back: ['/assets/Node.js.svg', '/assets/Express.svg'],

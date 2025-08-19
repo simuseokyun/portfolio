@@ -2,7 +2,18 @@ import projectDB from '@/app/db/project';
 import ProjectDetail from '@/app/project/[id]/_components/ProjectDetail';
 import ProjectOverview from '@/app/project/[id]/_components/ProjectOverview';
 import ModalContainer from '@/app/_components/ModalContainer';
-export default async function ProjectModal({ params }: { params?: Promise<{ id?: string }> }) {
+interface Modal {
+    params: Promise<{ id: string }>;
+}
+export async function generateMetadata({ params }: Modal) {
+    const { id } = await params; // await 추가
+    return {
+        title: `프로젝트 ${id}`,
+        description: `프로젝트 ${id} 입니다`,
+    };
+}
+
+export default async function ProjectModal({ params }: Modal) {
     const param = await params;
     const id = param?.id;
     const project = projectDB.find((item) => item.id === Number(id));

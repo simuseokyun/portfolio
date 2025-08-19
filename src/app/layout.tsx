@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { ReactNode } from 'react';
 import { Poppins } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
 import './styles/reset.css';
@@ -18,9 +19,9 @@ const poppins = Poppins({
     display: 'swap',
 });
 interface RootLayout {
-    children: React.ReactNode;
-    projectModal?: React.ReactNode;
-    contactModal?: React.ReactNode;
+    children: ReactNode;
+    projectModal: ReactNode;
+    contactModal: ReactNode;
 }
 
 export default function RootLayout({ children, projectModal, contactModal }: RootLayout) {

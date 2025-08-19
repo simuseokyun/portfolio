@@ -13,6 +13,7 @@ export default function ProjectUI({ design }: Pick<ProjectDB, 'design'>) {
                                 alt="UI 화면"
                                 width={800}
                                 height={600}
+                                unoptimized
                                 style={{ height: 'auto', width: '100%', objectFit: 'contain' }}
                             />
                         </div>

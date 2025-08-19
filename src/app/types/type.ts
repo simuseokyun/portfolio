@@ -1,3 +1,11 @@
+export interface SectionContainerProps {
+    id: string;
+    title: string;
+    description: string;
+    style?: string;
+    children: React.ReactNode;
+}
+
 export interface ProjectDB {
     id: number;
     title: string;
@@ -10,7 +18,7 @@ export interface ProjectDB {
     skillBackground: { name: string; description: string }[];
     structure: string;
     design: { title: string; image: string }[];
-    troubleShooting: { title: string; issue: string; solution: string }[];
+    troubleShooting: { title: string; issue: string; solution: { content: string; code?: string; image?: string }[] }[];
 }
 
 export interface ProjectCard {

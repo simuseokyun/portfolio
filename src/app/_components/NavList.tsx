@@ -35,7 +35,6 @@ export default function NavList() {
                     )}
                 </div>
             </div>
-
             <div
                 className={`block max-w-md m-auto  mt-2  bg-[rgba(240,240,240,0.9)] rounded-md transition-all duration-500 ease-in-out overflow-hidden md:hidden ${navActive ? 'h-[180px]' : 'h-0'}`}
             >

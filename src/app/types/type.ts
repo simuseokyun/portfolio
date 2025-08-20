@@ -6,6 +6,18 @@ export interface SectionContainerProps {
     children: React.ReactNode;
 }
 
+export interface CareerItem {
+    title: string;
+    year: string;
+    content?: string[];
+}
+
+export interface CareerDB {
+    education: CareerItem[];
+    courses: CareerItem[];
+    experience: CareerItem[];
+}
+
 export interface ProjectDB {
     id: number;
     title: string;

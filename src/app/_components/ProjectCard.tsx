@@ -19,7 +19,7 @@ export default function ProjectCard({ item }: ProjectCardProps) {
     if (!mounted) return null;
     return (
         <div
-            className={`relative w-full h-[470px] group rounded-md overflow-hidden border shadow border-[#e2e2e2]  animate-card-hover hover:animate-card-hover lg:h-[520px] ${theme === 'dark' ? 'bg-[#555555]  ' : 'bg-white'} `}
+            className={`relative w-full h-[470px] group rounded-md overflow-hidden border shadow border-[#e2e2e2]  animate-card-hover lg:hover:animate-card-hover lg:h-[520px] ${theme === 'dark' ? 'bg-[#555555]  ' : 'bg-white'} `}
             onClick={onClickProject}
         >
             <div className="absolute top-0 left-0 w-full h-[300px]">

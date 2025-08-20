@@ -13,9 +13,9 @@ export default function CarrerDetail({ data }: { data: { title: string; year: st
 
     if (!mounted) return null;
     return (
-        <div className="block sm:flex mt-8">
+        <div className="block sm:flex mt-6">
             <p className="flex-1 text-sub text-left text-sm sm:text-right sm:text-base">{year}</p>
-            <div className="flex-2 mt-2 sm:mt-0 sm:ml-10 ">
+            <div className="flex-2 mt-1 sm:mt-0 sm:ml-10 ">
                 <h1 className="font-semibold inline-flex items-center">
                     <span className="w-2 h-2 bg-[var(--main-color)] rounded-full mr-2" />
                     {title}

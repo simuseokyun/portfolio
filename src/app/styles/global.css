@@ -34,20 +34,20 @@
 @keyframes float-up {
     0%,
     100% {
-        transform: translateY(-4px);
+        transform: translateY(-2px);
     }
     50% {
-        transform: translateY(4px);
+        transform: translateY(2px);
     }
 }
 
 @keyframes float-down {
     0%,
     100% {
-        transform: translateY(4px);
+        transform: translateY(2px);
     }
     50% {
-        transform: translateY(-4px);
+        transform: translateY(-2px);
     }
 }
 

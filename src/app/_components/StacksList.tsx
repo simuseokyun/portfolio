@@ -24,7 +24,7 @@ export default function StackList({ data }: { data: Stack[] }) {
                         <Image src={`/assets/${image}`} width={30} height={30} alt={name} />
                         <div className="opacity-100 ml-1 lg:ml-0 lg:opacity-0 group-hover:opacity-100 group-hover:visible   transition-opacity delay-200 duration-300">
                             <h1 className="text-sm font-semibold md:font-base ">{name}</h1>
-                            <p className="text-sm mt-0.5">{description}</p>
+                            <p className="text-[12px] md:text-sm mt-0.5">{description}</p>
                         </div>
                     </div>
                 </li>

@@ -28,7 +28,7 @@ export default function ProjectCard({ item }: ProjectCardProps) {
             <div className="absolute top-0 left-0 w-full h-[300px] bg-black opacity-50 group-hover:opacity-0 duration-300" />
 
             <div
-                className={`absolute bottom-0 py-1 px-2 flex flex-col justify-start items-start w-full h-[170px] lg:h-[220px] ${theme === 'dark' ? 'bg-[#111111] ' : 'bg-white'}`}
+                className={`absolute bottom-0 py-2 px-2 flex flex-col justify-start items-start w-full h-[170px] lg:h-[220px] ${theme === 'dark' ? 'bg-[#111111] ' : 'bg-white'}`}
             >
                 <h1 className="text-lg font-semibold">{item?.title}</h1>
                 <div className="flex items-start mt-1">

@@ -1,4 +1,5 @@
-import RootPage from '../page';
+import ContactModal from '../@contactModal/(.)info/page';
+
 export default function Page() {
-    return <RootPage />;
+    return <ContactModal />;
 }

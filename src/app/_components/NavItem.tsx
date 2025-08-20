@@ -5,7 +5,7 @@ import { NavItem as NavItemProps } from '../types/type';
 export default function NavItem({ item, onClick, active }: NavItemProps) {
     const { id, name, href } = item;
     return (
-        <li className="p-1">
+        <li className="px-1 py-1.5">
             <Link
                 href={href}
                 onClick={onClick}

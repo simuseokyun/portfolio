@@ -5,7 +5,7 @@ const projectDB: ProjectDB[] = [
         id: 1,
         title: '음악 스트리밍 앱',
         description:
-            'Spotify Web API를 활용해 사용자의 음악 데이터를 시각화하고,플레이리스트,아티스트 정보 등을 제공, 일정 시간 음악을 스트리밍할 수 있는 리액트 기반 웹 애플리케이션',
+            'Spotify Web API를 활용해 사용자의 음악 데이터를 시각화하고 일정 시간 음악을 스트리밍할 수 있는 리액트 기반 웹 애플리케이션',
         image: '/assets/ProjectOne.jpg',
         skill: {
             front: [
@@ -218,14 +218,14 @@ const onNext = usePlayThrottle(async () => {
     {
         id: 2,
         title: '포트폴리오',
-        description: 'Next.js의 SSG 기능을 이용해 성능과 SEO에 최적화된 포트폴리오 사이트',
+        description: 'Next.js의 다이나믹 라우팅을 활용한 빠른 로딩과 SEO 최적화가 적용된 포트폴리오 사이트',
         image: '/assets/Portfolio.jpg',
         skill: { front: ['/assets/Next.js.svg', '/assets/TypeScript.svg', '/assets/Tailwind.svg'], back: [] },
         github: 'https://github.com/simuseokyun/portfolio',
         purpose:
-            '문서화하는 것도 의미 있지만, 보다 직관적이고 접근성이 좋은 웹사이트 형태로 제작해보고 싶었습니다. 또한, 이 과정에서 Next.js의 Static Site Generation(SSG) 기능을 활용하여 빠르고 효율적인 페이지 렌더링을 경험하고자 했습니다.',
+            '문서화하는 것도 의미 있지만, 보다 직관적이고 접근성이 좋은 웹사이트 형태로 제작해보고 싶었습니다. 또한, 이 과정에서 Next.js의 서버/클라이언트 혼합 렌더링을 활용하여 빠르고 효율적인 페이지 렌더링을 경험하고자 했습니다.',
         features: [
-            'Next.js의 SSG를 활용한 빠른 페이지 로딩과 SEO 최적화',
+            'Next.js의 서버/클라이언트 혼합 렌더링을 활용한 빠른 페이지 로딩과 SEO 최적화',
             'Framer Motion을 이용한 부드러운 애니메이션 효과',
             '반응형 디자인과 웹 접근성 고려',
             '다크 모드 구현',

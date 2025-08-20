@@ -9,7 +9,7 @@ export default function ProjectUI({ design }: Pick<ProjectDB, 'design'>) {
                     <li key={title}>
                         <div className={`w-full ${index && 'mt-20'} `}>
                             <Image
-                                src={image || '/assets/CloseButton.svg'}
+                                src={image || '/assets/CloseButton.png'}
                                 alt="UI 화면"
                                 width={800}
                                 height={600}

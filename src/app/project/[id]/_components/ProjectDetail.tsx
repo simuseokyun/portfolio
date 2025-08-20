@@ -20,8 +20,8 @@ export default function ProjectDetail({ project }: { project?: ProjectDB }) {
             <ProjectFeature features={features} />
             <ProjectStructure structure={structure} />
             <ProjectSkillBg skillBackground={skillBackground} />
-            <ProjectUI design={design} />
             <ProjectTrouble troubleShooting={troubleShooting} />
+            <ProjectUI design={design} />
         </div>
     );
 }

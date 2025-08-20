@@ -39,9 +39,8 @@ export default function ModalContainer({
             >
                 <div className="flex justify-between items-center">
                     <h2 className="text-xl font-semibold">{title}</h2>
-                    <Image src="/assets/CloseButton.svg" width={30} height={30} alt="닫기" onClick={onClose} />
+                    <Image src="/assets/CloseButton.png" width={30} height={30} alt="닫기" onClick={onClose} />
                 </div>
-
                 {children}
             </motion.div>
         </div>

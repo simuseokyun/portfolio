@@ -12,7 +12,6 @@ export default function ProjectCard({ item }: ProjectCardProps) {
     const onClickProject = () => {
         router.push(`/project/${item?.id}`);
     };
-
     useEffect(() => {
         setMounted(true);
     }, []);
@@ -20,16 +19,16 @@ export default function ProjectCard({ item }: ProjectCardProps) {
     if (!mounted) return null;
     return (
         <div
-            className={`relative w-full h-[400px] group rounded-md overflow-hidden border shadow border-[#e2e2e2]  animate-card-hover hover:animate-card-hover lg:h-[450px] ${theme === 'dark' ? 'bg-[#555555]  ' : 'bg-white'} `}
+            className={`relative w-full h-[470px] group rounded-md overflow-hidden border shadow border-[#e2e2e2]  animate-card-hover hover:animate-card-hover lg:h-[520px] ${theme === 'dark' ? 'bg-[#555555]  ' : 'bg-white'} `}
             onClick={onClickProject}
         >
-            <div className="absolute top-0 left-0 w-full h-[200px]">
+            <div className="absolute top-0 left-0 w-full h-[300px]">
                 <Image src={item?.image} className="object-cover w-full h-full" fill alt={item?.title} />
             </div>
-            <div className="absolute top-0 left-0 w-full h-[200px] bg-black opacity-50 group-hover:opacity-0 duration-300" />
+            <div className="absolute top-0 left-0 w-full h-[300px] bg-black opacity-50 group-hover:opacity-0 duration-300" />
 
             <div
-                className={`absolute bottom-0 p-4 flex flex-col justify-start items-start w-full h-[200px] lg:h-[250px] ${theme === 'dark' ? 'bg-[#111111] ' : 'bg-white'}`}
+                className={`absolute bottom-0 p-4 flex flex-col justify-start items-start w-full h-[170px] lg:h-[220px] ${theme === 'dark' ? 'bg-[#111111] ' : 'bg-white'}`}
             >
                 <h1 className="text-lg font-semibold">{item?.title}</h1>
                 <div className="flex items-start mt-2">

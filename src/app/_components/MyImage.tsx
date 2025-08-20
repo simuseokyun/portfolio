@@ -10,7 +10,7 @@ export default function MyImage() {
         return <div ref={ref} style={{ height: 300 }} />;
     }
     return (
-        <div ref={ref} className="flex justify-center animate-slide-fade-in">
+        <div ref={ref} className="flex justify-center lg:animate-slide-fade-in">
             <div className="w-[300px] h-[300px] relative rounded-full overflow-hidden">
                 <Image src="/assets/MyImage.jpeg" fill alt="프로필" style={{ objectFit: 'cover' }} />
             </div>

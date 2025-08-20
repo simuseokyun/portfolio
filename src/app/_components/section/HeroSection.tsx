@@ -14,11 +14,11 @@ export default function HeroSection() {
                 <br />
                 심현석입니다
             </h1>
-            <p className="text-sub text-xl mt-2">
-                <span className="inline-block text-accent font-semibold animate-float-up">배움</span>과
-                <span className="inline-block text-accent font-semibold animate-float-down">&nbsp;도전</span>을
-                두려워하지 않습니다
+            <p className="text-sub text-lg mt-4 md:text-xl ">
+                새로운 <span className="inline-block text-accent font-semibold animate-float-up">기술</span>과&nbsp;
+                <span className="inline-block text-accent font-semibold animate-float-down">도전</span>을 즐기며,
             </p>
+            <p className="text-sub  text-lg md:text-xl ">항상 성장하는 프론트엔드 개발자입니다.</p>
         </div>
     );
 }

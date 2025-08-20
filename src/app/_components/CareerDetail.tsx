@@ -3,7 +3,7 @@
 import { useTheme } from 'next-themes';
 import { useState, useEffect } from 'react';
 
-export default function CarrerDetail({ data }: { data: { title: string; year: string; content?: string[] } }) {
+export default function CareerDetail({ data }: { data: { title: string; year: string; content?: string[] } }) {
     const { theme } = useTheme();
     const [mounted, setMounted] = useState(false);
     const { title, year, content } = data;
@@ -22,7 +22,7 @@ export default function CarrerDetail({ data }: { data: { title: string; year: st
                 </h1>
                 {content && (
                     <div
-                        className={`w-full mt-2 bg-gray-100  p-2 rounded-md sm:max-w-[400px] ${theme === 'dark' ? 'bg-inherit border border-white' : ''}`}
+                        className={`w-full mt-2 bg-gray-100  p-2 rounded-md sm:max-w-[430px] ${theme === 'dark' ? 'bg-inherit border border-white' : ''}`}
                     >
                         {content?.map((content, index) => (
                             <p key={content} className={`text-sm ${index && 'mt-1'}`}>

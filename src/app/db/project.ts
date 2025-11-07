@@ -149,7 +149,7 @@ const projectDB: ProjectDB[] = [
         design: [
             { title: '반응형 디자인', image: '/assets/ResponsibleDesignP.gif' },
             { title: 'Smooth-Scolling을 통한 네비게이션 이동', image: '/assets/Nav.gif' },
-            { title: '인피셉팅 라우트와 Framer-motion을 활용한 모달', image: '/assets/Motion.gif' },
+            { title: '인터셉팅 라우트와 Framer-motion을 활용한 모달', image: '/assets/Motion.gif' },
         ],
 
         troubleShooting: [
@@ -189,7 +189,7 @@ const projectDB: ProjectDB[] = [
         design: [
             { title: '반응형 디자인', image: '/assets/ResponsibleDesignP.gif' },
             { title: 'Smooth-Scolling을 통한 네비게이션 이동', image: '/assets/Nav.gif' },
-            { title: '인피셉팅 라우트와 Framer-motion을 활용한 모달', image: '/assets/Motion.gif' },
+            { title: '인터셉팅 라우트와 Framer-motion을 활용한 모달', image: '/assets/Motion.gif' },
         ],
     },
 ];

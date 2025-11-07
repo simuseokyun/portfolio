@@ -184,10 +184,7 @@ const projectDB: ProjectDB[] = [
             'OpenWeatherMap API를 이용한 실시간 날씨 조회 기능 구현',
             '검색 지역의 날씨(예: 비, 눈)에 따라 동적으로 변하는 배경 효과 구현',
         ],
-        design: [
-            { title: '반응형 디자인', image: '/assets/ResponsibleDesignP.gif' },
-            { title: '날씨 조회', image: '/assets/Nav.gif' },
-        ],
+        design: [{ title: '날씨 조회', image: '/assets/getWeather.gif' }],
     },
 ];
 export default projectDB;

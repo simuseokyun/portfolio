@@ -9,6 +9,7 @@ export interface SectionContainerProps {
 export interface CareerItem {
     title: string;
     year: string;
+    description?: string;
     content?: string[];
 }
 

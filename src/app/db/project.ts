@@ -168,7 +168,7 @@ const projectDB: ProjectDB[] = [
     {
         id: 3,
         title: '오늘의 날씨',
-        description: '오픈 API를 활용한 국내 날씨 정보 제공 웹 애플리케이션',
+        description: '외부 오픈 API를 활용한 국내 날씨 정보 제공 웹 애플리케이션',
         image: '/assets/ProjectThree.png',
         skill: {
             front: ['/assets/JavaScript.svg'],
@@ -182,7 +182,7 @@ const projectDB: ProjectDB[] = [
         features: [
             '반응형 디자인과 웹 접근성을 고려한 UI 설계 및 구현',
             'OpenWeatherMap API를 이용한 실시간 날씨 조회 기능 구현',
-            '검색 지역의 날씨(예: 비, 눈)에 따라 동적으로 변하는 배경 효과 구현',
+            '검색 지역의 날씨에 따라 동적으로 변하는 배경 효과 구현',
         ],
         design: [{ title: '날씨 조회', image: '/assets/getWeather.gif' }],
     },

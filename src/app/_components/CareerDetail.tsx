@@ -3,10 +3,14 @@
 import { useTheme } from 'next-themes';
 import { useState, useEffect } from 'react';
 
-export default function CareerDetail({ data }: { data: { title: string; year: string; content?: string[] } }) {
+export default function CareerDetail({
+    data,
+}: {
+    data: { title: string; year: string; description?: string; content?: string[] };
+}) {
     const { theme } = useTheme();
     const [mounted, setMounted] = useState(false);
-    const { title, year, content } = data;
+    const { title, year, content, description } = data;
     useEffect(() => {
         setMounted(true);
     }, []);
@@ -19,6 +23,7 @@ export default function CareerDetail({ data }: { data: { title: string; year: st
                 <h1 className="font-semibold inline-flex items-center">
                     <span className="w-2 h-2 bg-[var(--main-color)] rounded-full mr-2" />
                     {title}
+                    <span>:&nbsp;| {description && description}</span>
                 </h1>
                 {content && (
                     <div

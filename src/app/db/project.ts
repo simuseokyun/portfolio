@@ -171,7 +171,7 @@ const projectDB: ProjectDB[] = [
         description: '오픈 API를 활용한 국내 날씨 정보 제공 웹 애플리케이션',
         image: '/assets/ProjectThree.png',
         skill: {
-            front: ['/assets/JavaScript.svg', '/assets/GitHubActions.svg'],
+            front: ['/assets/JavaScript.svg'],
             back: [],
             deploy: ['/assets/GitHubActions.svg'],
         },

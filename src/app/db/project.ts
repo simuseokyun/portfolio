@@ -185,7 +185,6 @@ const projectDB: ProjectDB[] = [
             '반응형 디자인과 웹 접근성 고려',
             '다크 모드 구현',
         ],
-
         design: [
             { title: '반응형 디자인', image: '/assets/ResponsibleDesignP.gif' },
             { title: 'Smooth-Scolling을 통한 네비게이션 이동', image: '/assets/Nav.gif' },

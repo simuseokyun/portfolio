@@ -1,8 +1,8 @@
 import { ProjectDB } from '@/app/types/type';
 
 export default function ProjectSkillBg({ skillBackground }: Pick<ProjectDB, 'skillBackground'>) {
-    if (!skillBackground) return null;
-    console.log(skillBackground);
+    if (!skillBackground?.length) return null;
+
     return (
         <>
             <h2 className="font-semibold mt-10">&#8226; 기술 선택 배경</h2>

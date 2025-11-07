@@ -6,7 +6,7 @@ export default function ProjectStructure({ structure }: Pick<ProjectDB, 'structu
             <h2 className="font-semibold mt-10">&#8226; 구조</h2>
             <div className="w-full left-[-5px]">
                 <Image
-                    src={structure}
+                    src={structure || '/assets/CloseButton.png'}
                     alt="라우팅 구조"
                     width={800}
                     height={600}

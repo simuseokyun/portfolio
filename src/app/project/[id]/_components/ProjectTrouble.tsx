@@ -1,7 +1,4 @@
 import { ProjectDB } from '@/app/types/type';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-
 export default function ProjectTrouble({ troubleShooting }: Pick<ProjectDB, 'troubleShooting'>) {
     return (
         <>
@@ -22,21 +19,9 @@ export default function ProjectTrouble({ troubleShooting }: Pick<ProjectDB, 'tro
                             <h1 className="text-sm font-semibold">
                                 <span className="mr-1">💡</span>해결 방법
                             </h1>
-                            {solution?.map(({ content, code }) => {
+                            {solution?.map(({ content }) => {
                                 return (
                                     <div key={content} className="mt-2">
-                                        {code && (
-                                            <SyntaxHighlighter
-                                                customStyle={{
-                                                    fontFamily: 'Arial, sans-serif',
-                                                    fontSize: '14px',
-                                                }}
-                                                language="javascript"
-                                                style={atomDark}
-                                            >
-                                                {code}
-                                            </SyntaxHighlighter>
-                                        )}
                                         <h1 className="text-[#555555] text-sm mt-2">{content}</h1>
                                     </div>
                                 );

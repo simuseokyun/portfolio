@@ -27,10 +27,14 @@ export interface ProjectDB {
     github: string;
     purpose: string;
     features: string[];
-    skillBackground: { name: string; description: string }[];
-    structure: string;
+    skillBackground?: { name: string; description: string }[];
+    structure?: string;
     design: { title: string; image: string }[];
-    troubleShooting: { title: string; issue: string; solution: { content: string; code?: string; image?: string }[] }[];
+    troubleShooting?: {
+        title: string;
+        issue: string;
+        solution: { content: string; code?: string; image?: string }[];
+    }[];
 }
 
 export interface ProjectCard {

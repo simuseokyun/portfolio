@@ -166,7 +166,7 @@ const projectDB: ProjectDB[] = [
         title: '오늘의 날씨',
         description: '오픈 API를 활용한 국내 날씨 정보 제공 웹 애플리케이션',
         image: '/assets/ProjectThree.png',
-        skill: { front: ['/assets/JavaScript.svg', '/assets/GithubActions.svg'], back: [] },
+        skill: { front: ['/assets/JavaScript.svg', '/assets/GitHubActions.svg'], back: [] },
         github: 'https://github.com/simuseokyun/portfolio',
         purpose:
             '문서화하는 것도 의미 있지만, 보다 직관적이고 접근성이 좋은 웹사이트 형태로 제작해보고 싶었습니다. 또한, 이 과정에서 Next.js의 서버/클라이언트 혼합 렌더링을 활용하여 빠르고 효율적인 페이지 렌더링을 경험하고자 했습니다.',
@@ -176,36 +176,11 @@ const projectDB: ProjectDB[] = [
             '반응형 디자인과 웹 접근성 고려',
             '다크 모드 구현',
         ],
-        structure: '/assets/PortfolioStructure.png',
-        skillBackground: [
-            {
-                name: 'Next',
-                description:
-                    '포트폴리오 사이트는 빠른 초기로딩과 SEO최적화가 중요한 요구사항이었기에 Next를 도입하게 되었다. 또한 데이터가 변경되지 않는 포트폴리오 특성상 Next의 정적 사이트 생성기능이 적합하다고 생각했습니다',
-            },
-            {
-                name: 'Tailwind',
-                description:
-                    '클래스 단위로 손쉽게 재사용 가능한 디자인 시스템을 구축할 수 있어서 개발 생산성 측면에서 매력적으로 다가왔고 무엇보다 브레이크 포인트가 내장되어 있어서 반응형 디자인을 손쉽게 구현할 수 있다는 점에서 도입하게 되었습니다',
-            },
-        ],
+
         design: [
             { title: '반응형 디자인', image: '/assets/ResponsibleDesignP.gif' },
             { title: 'Smooth-Scolling을 통한 네비게이션 이동', image: '/assets/Nav.gif' },
             { title: '인피셉팅 라우트와 Framer-motion을 활용한 모달', image: '/assets/Motion.gif' },
-        ],
-
-        troubleShooting: [
-            {
-                title: '하이드레이션 에러',
-                issue: 'useTheme 함수를 사용하는 과정에서 서버에서 생성한 HTML과 렌더링 후 DOM트리가 일치하지 않아서 하이드레이션 에러가 발생',
-                solution: [
-                    {
-                        content:
-                            'useTheme의 값은 브라우저의 환경을 보고 결정되는데 서버에서는 이 값이 확정적이지 않아서 기본 값으로 설정한다. 이후 클라이언트에서 하이드레이션이 일어날 때 실제 테마가 다르게 계산되면 서버가 만든 HTML과 클라이언트가 그리려는 DOM이 달라져 하이드레이션 에러가 발생한다. 따라서 useEffet를 사용하여 useTheme의 값이 클라이언트가 마운트 된 이후에 렌더링되도록 하였습니다.',
-                    },
-                ],
-            },
         ],
     },
 ];

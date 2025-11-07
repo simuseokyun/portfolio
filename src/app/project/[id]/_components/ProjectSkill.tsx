@@ -1,7 +1,7 @@
 import { ProjectDB } from '@/app/types/type';
 
-export default function ProjectSkill({ skill = { front: [], back: [] } }: { skill?: ProjectDB['skill'] }) {
-    const { front, back } = skill;
+export default function ProjectSkill({ skill = { front: [], back: [], deploy: [] } }: { skill?: ProjectDB['skill'] }) {
+    const { front, back, deploy } = skill;
     return (
         <>
             <h1 className="text-sm font-semibold mt-3">기술 스택</h1>
@@ -35,6 +35,17 @@ export default function ProjectSkill({ skill = { front: [], back: [] } }: { skil
                 ) : (
                     ''
                 )}
+                <div className="flex items-center gap-2 flex-wrap">
+                    <p className="text-sm flex-shrink-0">배포</p>
+                    {deploy?.map((skill) => {
+                        const stackName = skill.split('/').pop()?.split('.')[0] || '';
+                        return (
+                            <span className={`text-[12px] px-[5px] py-[2px] bg-[#b6c1f9] rounded-lg `} key={skill}>
+                                {stackName}
+                            </span>
+                        );
+                    })}
+                </div>
             </div>
         </>
     );

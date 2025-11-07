@@ -23,7 +23,7 @@ export interface ProjectDB {
     title: string;
     description: string;
     image: string;
-    skill: { front: string[]; back: string[] };
+    skill: { front: string[]; back: string[]; deploy: string[] };
     github: string;
     web: string;
     purpose: string;

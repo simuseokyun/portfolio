@@ -41,7 +41,7 @@ export default function ProjectCard({ item }: ProjectCardProps) {
                     />
                     <div className="flex items-center gap-1">
                         <span className="text-sm flex font-semibold">기술 스택 :</span>
-                        {[...item.skill.front, ...item.skill.back].map((skill) => (
+                        {[...item.skill.front, ...item.skill.back, ...item.skill.deploy].map((skill) => (
                             <Image
                                 className="inline-block"
                                 key={skill}

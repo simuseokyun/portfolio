@@ -17,6 +17,7 @@ const projectDB: ProjectDB[] = [
                 '/assets/AWS.svg',
             ],
             back: ['/assets/Node.js.svg', '/assets/Express.svg'],
+            deploy: ['/assets/AWS.svg'],
         },
         github: 'https://github.com/simuseokyun/music-stream',
         web: 'https://simseokyun.info',
@@ -118,8 +119,9 @@ const projectDB: ProjectDB[] = [
         description: 'Next.js의 다이나믹 라우팅을 활용한 빠른 로딩과 SEO 최적화가 적용된 포트폴리오 사이트',
         image: '/assets/ProjectTwo.jpg',
         skill: {
-            front: ['/assets/Next.js.svg', '/assets/TypeScript.svg', '/assets/Tailwind.svg', '/assets/Vercel.svg'],
+            front: ['/assets/Next.js.svg', '/assets/TypeScript.svg', '/assets/Tailwind.svg'],
             back: [],
+            deploy: ['/assets/Vercel.svg'],
         },
         github: 'https://github.com/simuseokyun/portfolio',
         web: 'https://portfolio-eight-psi-6a8jy4r1fa.vercel.app/',
@@ -134,7 +136,7 @@ const projectDB: ProjectDB[] = [
         structure: '/assets/PortfolioStructure.png',
         skillBackground: [
             {
-                name: 'Next',
+                name: 'Next.js',
                 description:
                     '포트폴리오 사이트는 빠른 초기로딩과 SEO최적화가 중요한 요구사항이었기에 Next를 도입하게 되었다. 또한 데이터가 변경되지 않는 포트폴리오 특성상 Next의 정적 사이트 생성기능이 적합하다고 생각했습니다',
             },
@@ -168,7 +170,11 @@ const projectDB: ProjectDB[] = [
         title: '오늘의 날씨',
         description: '오픈 API를 활용한 국내 날씨 정보 제공 웹 애플리케이션',
         image: '/assets/ProjectThree.png',
-        skill: { front: ['/assets/JavaScript.svg', '/assets/GitHubActions.svg'], back: [] },
+        skill: {
+            front: ['/assets/JavaScript.svg', '/assets/GitHubActions.svg'],
+            back: [],
+            deploy: ['/assets/GitHubActions.svg'],
+        },
         github: 'https://github.com/simuseokyun/simuseokyun.github.io/tree/main/Weather',
         web: 'https://simuseokyun.github.io/Weather/',
         purpose:

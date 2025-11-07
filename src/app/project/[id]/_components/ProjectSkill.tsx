@@ -36,11 +36,11 @@ export default function ProjectSkill({ skill = { front: [], back: [], deploy: []
                     ''
                 )}
                 <div className="flex items-center gap-2 flex-wrap">
-                    <p className="text-sm flex-shrink-0">배포</p>
+                    <p className="text-sm flex-shrink-0 mt-2">배포</p>
                     {deploy?.map((skill) => {
                         const stackName = skill.split('/').pop()?.split('.')[0] || '';
                         return (
-                            <span className={`text-[12px] px-[5px] py-[2px] bg-[#b6c1f9] rounded-lg `} key={skill}>
+                            <span className={`text-[12px] px-[5px] py-[2px] bg-[#b6eaf9] rounded-lg `} key={skill}>
                                 {stackName}
                             </span>
                         );

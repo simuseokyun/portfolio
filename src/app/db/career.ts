@@ -25,7 +25,7 @@ const CareerDB: CareerData = {
     ],
     experience: [
         {
-            title: 'SSEM | 세금 신고 자동화 서비스',
+            title: 'SSEM',
             description: '프론트엔드 개발자',
             year: '2023.10 - 2023.12',
             content: [

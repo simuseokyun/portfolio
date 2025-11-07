@@ -14,6 +14,7 @@ const projectDB: ProjectDB[] = [
                 '/assets/Tailwind.svg',
                 '/assets/TanstackQuery.png',
                 '/assets/Zustand.webp',
+                '/assets/AWS.svg',
             ],
             back: ['/assets/Node.js.svg', '/assets/Express.svg'],
         },
@@ -71,32 +72,6 @@ const projectDB: ProjectDB[] = [
                         content:
                             '제가 고려한 해결방법은 두 가지입니다. 첫 째, 401 에러가 발생했을 때 토큰을 갱신하는 방식입니다. 그러나 이 방법은 요청이 실패한 뒤에야 갱신이 이루어지므로 불편함을 유발할 수 있습니다. 둘 째, 토큰의 만료 시점을 계산하여 만료되기 전 토큰을 재발급받는 방식입니다. 이는 요청실패를 사전에 방지하기 때문에 최종적으로 이 방법을 채택했습니다. 또한 웹 액세스 토큰은 사용자 인증과 무관한 데이터를 받는데 사용되므로 로컬 스토리지를 이용하였습니다.',
                         image: '/assets/token.png',
-                        code: `const getWebToken = async (): Promise<{ access_token: string; expires_in: string }> => {
-  const accessToken = getLocalStorage('webAccessToken');
-  const expiresIn = getLocalStorage('webExpiration');
-  const issuedAt = getLocalStorage('issuedAt');
-  const nowTime = Date.now();
-  const isValid =
-    accessToken &&
-    expiresIn &&
-    issuedAt &&
-    nowTime - 30000 < Number(issuedAt) + Number(expiresIn) * 1000;
-  if (isValid) {
-    return { access_token: accessToken, expires_in: expiresIn };
-  }
-  try {
-    const response = await axios.get('/api/webToken');
-    const { access_token, expires_in } = response.data;
-    const issuedAtNow = Date.now();
-    localStorage.setItem('webAccessToken', access_token);
-    localStorage.setItem('webExpiration', expires_in.toString());
-    localStorage.setItem('issuedAt', issuedAtNow.toString());
-    return { access_token, expires_in };
-  } catch (error) {
-    throw new Error('토큰을 발급하는 데 실패했습니다.');
-  }
-};
-                      `,
                     },
                 ],
             },
@@ -107,43 +82,7 @@ const projectDB: ProjectDB[] = [
                     {
                         content:
                             '클라이언트가 직접 SDK 토큰을 받는 대신, 별도의 프록시 서버를 구성하였습니다. 서버가 Spotify와 통신하여 액세스 토큰과 리프레시 토큰을 안전하게 발급받은 후 Set-Cookie 헤더를 사용하여 클라이언트에 내려줍니다. 또한 쿠키에 HttpOnly, Secure, SameSite 옵션을 통해 클라이언트에서 접근이 불가하도록 하였습니다. 클라이언트에선 직접적으로 다루지 않고 credentials 옵션을 통해 쿠키를 안전하게 전송하도록 하였습니다.',
-                        code: `try {
-    const params = new URLSearchParams({
-      code,
-      redirect_uri: REDIRECT_URI,
-      grant_type: 'authorization_code',
-      client_id: CLIENT_ID,
-      client_secret: CLIENT_SECRET,
-    }).toString();
-    const data = await callSpotifyApi(\`\${BASE_URL_AUTH}/api/token\`, {
-      method: 'POST',
-      data: params,
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    });
-    const { access_token, refresh_token } = data;
-    res.cookie('access_token', access_token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
-      maxAge: 60 * 60 * 1000,
-    });
-    res.cookie('refresh_token', refresh_token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
-      maxAge: 14 * 24 * 60 * 60 * 1000,
-    });
-    return res.json({
-      state: true,
-      message: '토큰이 성공적으로 발급되었습니다',
-    });
-  } catch (error) {
-    if (error instanceof StatusError) {
-      return res.status(error.status).json({ message: errorMessages[error.status] });
-    } else {
-      return res.status(500).json({ message: errorMessages[500] });
-    }
-  }`,
+
                         image: '',
                     },
                 ],
@@ -155,30 +94,6 @@ const projectDB: ProjectDB[] = [
                     {
                         content: `Tanstack-Query의 getQueryData를 사용하여 업데이트가 필요한 데이터의 쿼리키만 추출하여 상태를 업데이트 하도록 하였습니다. 만약 해당 쿼리 데이터가 캐시에 존재하지 않는 경우에는, 새로 데이터를 fetch하게 되어 최신 상태가 자동으로 반영됩니다.
                          또한, useMutation의 낙천적 업데이트를 통하여 서버 응답을 기다리지 않고 즉시 화면에 반영하도록 하여 사용자 경험을 향상했습니다.`,
-                        code: `const useCreatePlaylist = () => {
-  const queryClient = useQueryClient();
-  const toast = useThrottledToast();
-  return useMutation<Playlist, unknown, Partial<Playlist>>({
-    mutationFn: createPlaylist,
-    onSuccess: (data) => {
-      toast('success', '플레이리스트를 생성하였습니다.');
-      const cache = queryClient.getQueryData<InfiniteData<PlaylistListResponse>>(['playlists']);
-      if (cache) {
-        const newData: InfiniteData<PlaylistListResponse> = {
-          ...cache,
-          pages: [
-            { ...cache.pages[0], items: [data, ...cache.pages[0].items] },
-            ...cache.pages.slice(1),
-          ],
-        };
-        queryClient.setQueryData(['playlists'], newData);
-      }
-    },
-    onError: () => {
-      toast('error', '플레이리스트 생성에 실패했습니다.');
-    },
-  });
-};`,
                     },
                 ],
             },
@@ -189,26 +104,7 @@ const projectDB: ProjectDB[] = [
                     {
                         content:
                             '일단 플레이어 제어 로직을 커스텀 훅으로 분리하였습니다. playNextTrack함수 내부에서 playPreview라는 재생 함수를 호출했을 때 결과값이 false. 즉, 에러가 발생한다면 재귀적으로 다음 트랙을 재생하도록 하였습니다. 또한 다음 트랙이 존재하지 않는다면 자동 재생을 멈추고 Toast를 통해 알림을 제공하도록 하였습니다.',
-                        code: `const toast = useThrottledToast();
-const { playPreview } = usePlayPreview();
-const { isPlaying, setIsPlaying } = usePlayerStore();
-const { playlist, currentIndex, setIndex } = useCurrentPlaylistStore();
-const playNextTrack = async (index: number, isAuto: boolean) => {
-    const nextTrack = playlist[index];
-    if (!nextTrack) {
-        toast('info', '다음 트랙이 없습니다');
-        setIsPlaying(false);
-        return;
-    }
-    setIndex(index);
-    const result = await playPreview(nextTrack);
-    if (!result.playState) {
-        await playNextTrack(index + 1, true);
-    }
-};
-const onNext = usePlayThrottle(async () => {
-    playNextTrack(currentIndex + 1, true);
-});`,
+
                         image: '',
                     },
                 ],
@@ -219,8 +115,11 @@ const onNext = usePlayThrottle(async () => {
         id: 2,
         title: '포트폴리오',
         description: 'Next.js의 다이나믹 라우팅을 활용한 빠른 로딩과 SEO 최적화가 적용된 포트폴리오 사이트',
-        image: '/assets/Portfolio.jpg',
-        skill: { front: ['/assets/Next.js.svg', '/assets/TypeScript.svg', '/assets/Tailwind.svg'], back: [] },
+        image: '/assets/ProjectTwo.jpg',
+        skill: {
+            front: ['/assets/Next.js.svg', '/assets/TypeScript.svg', '/assets/Tailwind.svg', '/assets/Vercel.svg'],
+            back: [],
+        },
         github: 'https://github.com/simuseokyun/portfolio',
         purpose:
             '문서화하는 것도 의미 있지만, 보다 직관적이고 접근성이 좋은 웹사이트 형태로 제작해보고 싶었습니다. 또한, 이 과정에서 Next.js의 서버/클라이언트 혼합 렌더링을 활용하여 빠르고 효율적인 페이지 렌더링을 경험하고자 했습니다.',
@@ -257,11 +156,53 @@ const onNext = usePlayThrottle(async () => {
                     {
                         content:
                             'useTheme의 값은 브라우저의 환경을 보고 결정되는데 서버에서는 이 값이 확정적이지 않아서 기본 값으로 설정한다. 이후 클라이언트에서 하이드레이션이 일어날 때 실제 테마가 다르게 계산되면 서버가 만든 HTML과 클라이언트가 그리려는 DOM이 달라져 하이드레이션 에러가 발생한다. 따라서 useEffet를 사용하여 useTheme의 값이 클라이언트가 마운트 된 이후에 렌더링되도록 하였습니다.',
-                        code: ` const { theme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-      setMounted(true);
-  }, []);`,
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        id: 3,
+        title: '오늘의 날씨',
+        description: '오픈 API를 활용한 국내 날씨 정보 제공 웹 애플리케이션',
+        image: '/assets/ProjectThree.jpg',
+        skill: { front: ['/assets/Javascript.svg', '/assets/GithubAcitions.svg'], back: [] },
+        github: 'https://github.com/simuseokyun/portfolio',
+        purpose:
+            '문서화하는 것도 의미 있지만, 보다 직관적이고 접근성이 좋은 웹사이트 형태로 제작해보고 싶었습니다. 또한, 이 과정에서 Next.js의 서버/클라이언트 혼합 렌더링을 활용하여 빠르고 효율적인 페이지 렌더링을 경험하고자 했습니다.',
+        features: [
+            'Next.js의 서버/클라이언트 혼합 렌더링을 활용한 빠른 페이지 로딩과 SEO 최적화',
+            'Framer Motion을 이용한 부드러운 애니메이션 효과',
+            '반응형 디자인과 웹 접근성 고려',
+            '다크 모드 구현',
+        ],
+        structure: '/assets/PortfolioStructure.png',
+        skillBackground: [
+            {
+                name: 'Next',
+                description:
+                    '포트폴리오 사이트는 빠른 초기로딩과 SEO최적화가 중요한 요구사항이었기에 Next를 도입하게 되었다. 또한 데이터가 변경되지 않는 포트폴리오 특성상 Next의 정적 사이트 생성기능이 적합하다고 생각했습니다',
+            },
+            {
+                name: 'Tailwind',
+                description:
+                    '클래스 단위로 손쉽게 재사용 가능한 디자인 시스템을 구축할 수 있어서 개발 생산성 측면에서 매력적으로 다가왔고 무엇보다 브레이크 포인트가 내장되어 있어서 반응형 디자인을 손쉽게 구현할 수 있다는 점에서 도입하게 되었습니다',
+            },
+        ],
+        design: [
+            { title: '반응형 디자인', image: '/assets/ResponsibleDesignP.gif' },
+            { title: 'Smooth-Scolling을 통한 네비게이션 이동', image: '/assets/Nav.gif' },
+            { title: '인피셉팅 라우트와 Framer-motion을 활용한 모달', image: '/assets/Motion.gif' },
+        ],
+
+        troubleShooting: [
+            {
+                title: '하이드레이션 에러',
+                issue: 'useTheme 함수를 사용하는 과정에서 서버에서 생성한 HTML과 렌더링 후 DOM트리가 일치하지 않아서 하이드레이션 에러가 발생',
+                solution: [
+                    {
+                        content:
+                            'useTheme의 값은 브라우저의 환경을 보고 결정되는데 서버에서는 이 값이 확정적이지 않아서 기본 값으로 설정한다. 이후 클라이언트에서 하이드레이션이 일어날 때 실제 테마가 다르게 계산되면 서버가 만든 HTML과 클라이언트가 그리려는 DOM이 달라져 하이드레이션 에러가 발생한다. 따라서 useEffet를 사용하여 useTheme의 값이 클라이언트가 마운트 된 이후에 렌더링되도록 하였습니다.',
                     },
                 ],
             },

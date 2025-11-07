@@ -14,8 +14,8 @@ const CareerDB: CareerData = {
             title: '인프런 독학과정',
             year: '2023 - 2024',
             content: [
-                'React, Next.js, TypeScript 등 프론트엔드 프레임워크 실습',
-                'Node.js, Express 등 백엔드 기술 학습',
+                'React, Next.js, TypeScript 등 프론트엔드 프레임워크 학습',
+                'Node.js, Express 등 서버와의 통신 구조 학습',
             ],
         },
     ],
@@ -23,10 +23,7 @@ const CareerDB: CareerData = {
         {
             title: 'SSEM',
             year: '2024 - 2024',
-            content: [
-                '핀테크 스타트업에서 프론트엔드 개발자로 근무',
-                '자사 프레임워크를 활용하여 서비스 기능 개발 경험',
-            ],
+            content: ['핀테크 스타트업에서 프론트엔드 개발자 근무', '자사 프레임워크를 활용하여 서비스 기능 개발 경험'],
         },
     ],
 };

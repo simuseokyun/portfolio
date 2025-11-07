@@ -14,12 +14,11 @@ export default function ProjectOverview({ project }: { project?: ProjectDB }) {
             <p className="mt-0.5 text-sm">1명 </p>
             <ProjectSkill skill={project?.skill} />
             <h1 className="font-semibold text-sm mt-3">깃허브 및 사이트 링크</h1>
-
             <p className="mt-1 flex">
-                <Link href={project?.web || ''} target="_blank">
+                <Link href={project?.github || ''} target="_blank">
                     <Image src="/assets/GitHub.svg" width={20} height={20} alt="깃허브" />
                 </Link>
-                <Link className="ml-2" href={project?.github || ''} target="_blank">
+                <Link className="ml-2" href={project?.web || ''} target="_blank">
                     <Image src="/assets/Link.svg" width={20} height={20} alt="깃허브" />
                 </Link>
             </p>

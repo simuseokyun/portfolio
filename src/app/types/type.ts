@@ -25,6 +25,7 @@ export interface ProjectDB {
     image: string;
     skill: { front: string[]; back: string[] };
     github: string;
+    web: string;
     purpose: string;
     features: string[];
     skillBackground?: { name: string; description: string }[];

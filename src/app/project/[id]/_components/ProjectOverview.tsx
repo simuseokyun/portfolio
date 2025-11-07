@@ -1,7 +1,7 @@
-import ProjectSkill from './ProjectSkill';
 import Image from 'next/image';
-import { ProjectDB } from '@/app/types/type';
 import Link from 'next/link';
+import ProjectSkill from './ProjectSkill';
+import { ProjectDB } from '@/app/types/type';
 
 export default function ProjectOverview({ project }: { project?: ProjectDB }) {
     return (
@@ -16,7 +16,7 @@ export default function ProjectOverview({ project }: { project?: ProjectDB }) {
             <h1 className="font-semibold text-sm mt-3">깃허브 및 사이트 링크</h1>
 
             <p className="mt-1 flex">
-                <Link href={project?.github || ''} target="_blank">
+                <Link href={project?.web || ''} target="_blank">
                     <Image src="/assets/GitHub.svg" width={20} height={20} alt="깃허브" />
                 </Link>
                 <Link className="ml-2" href={project?.github || ''} target="_blank">

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { ProjectDB } from '@/app/types/type';
 export default function ProjectStructure({ structure }: Pick<ProjectDB, 'structure'>) {
+    if (!structure) return null;
     return (
         <>
             <h2 className="font-semibold mt-10">&#8226; 구조</h2>

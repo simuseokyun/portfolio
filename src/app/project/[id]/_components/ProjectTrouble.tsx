@@ -1,5 +1,7 @@
 import { ProjectDB } from '@/app/types/type';
+
 export default function ProjectTrouble({ troubleShooting }: Pick<ProjectDB, 'troubleShooting'>) {
+    if (!troubleShooting) return null;
     return (
         <>
             <h2 className="font-semibold mt-10">&#8226; 개발 이슈 및 문제해결</h2>

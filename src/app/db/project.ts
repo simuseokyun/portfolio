@@ -19,6 +19,7 @@ const projectDB: ProjectDB[] = [
             back: ['/assets/Node.js.svg', '/assets/Express.svg'],
         },
         github: 'https://github.com/simuseokyun/music-stream',
+        web: 'https://simseokyun.info',
         purpose:
             '공개 API를 활용한 실질적인 서비스 구축 경험을 목표로 프로젝트를 기획했습니다. 특히, 음악에 대한 개인적인 관심을 바탕으로, 스트리밍 기능을 포함한 음악 애플리케이션을 직접 구현함으로써 프론트엔드와 백엔드 기술을 유기적으로 결합해보는 데 중점을 두었습니다.',
         features: [
@@ -121,6 +122,7 @@ const projectDB: ProjectDB[] = [
             back: [],
         },
         github: 'https://github.com/simuseokyun/portfolio',
+        web: 'https://portfolio-eight-psi-6a8jy4r1fa.vercel.app/',
         purpose:
             '문서화하는 것도 의미 있지만, 보다 직관적이고 접근성이 좋은 웹사이트 형태로 제작해보고 싶었습니다. 또한, 이 과정에서 Next.js의 서버/클라이언트 혼합 렌더링을 활용하여 빠르고 효율적인 페이지 렌더링을 경험하고자 했습니다.',
         features: [
@@ -168,6 +170,7 @@ const projectDB: ProjectDB[] = [
         image: '/assets/ProjectThree.png',
         skill: { front: ['/assets/JavaScript.svg', '/assets/GitHubActions.svg'], back: [] },
         github: 'https://github.com/simuseokyun/simuseokyun.github.io/tree/main/Weather',
+        web: 'https://simuseokyun.github.io/Weather/',
         purpose:
             '문서화하는 것도 의미 있지만, 보다 직관적이고 접근성이 좋은 웹사이트 형태로 제작해보고 싶었습니다. 또한, 이 과정에서 Next.js의 서버/클라이언트 혼합 렌더링을 활용하여 빠르고 효율적인 페이지 렌더링을 경험하고자 했습니다.',
         features: [

@@ -165,8 +165,8 @@ const projectDB: ProjectDB[] = [
         id: 3,
         title: '오늘의 날씨',
         description: '오픈 API를 활용한 국내 날씨 정보 제공 웹 애플리케이션',
-        image: '/assets/ProjectThree.jpg',
-        skill: { front: ['/assets/Javascript.svg', '/assets/GithubAcitions.svg'], back: [] },
+        image: '/assets/ProjectThree.png',
+        skill: { front: ['/assets/JavaScript.svg', '/assets/GithubActions.svg'], back: [] },
         github: 'https://github.com/simuseokyun/portfolio',
         purpose:
             '문서화하는 것도 의미 있지만, 보다 직관적이고 접근성이 좋은 웹사이트 형태로 제작해보고 싶었습니다. 또한, 이 과정에서 Next.js의 서버/클라이언트 혼합 렌더링을 활용하여 빠르고 효율적인 페이지 렌더링을 경험하고자 했습니다.',

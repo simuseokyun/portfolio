@@ -36,7 +36,7 @@ export default function ProjectSkill({ skill = { front: [], back: [], deploy: []
                     ''
                 )}
                 <div className="flex items-center gap-2 flex-wrap">
-                    <p className="text-sm flex-shrink-0 mt-2">배포</p>
+                    <p className="text-sm flex-shrink-0">배포</p>
                     {deploy?.map((skill) => {
                         const stackName = skill.split('/').pop()?.split('.')[0] || '';
                         return (

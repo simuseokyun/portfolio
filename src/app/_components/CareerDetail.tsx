@@ -23,7 +23,7 @@ export default function CareerDetail({
                 <h1 className="font-semibold inline-flex items-center">
                     <span className="w-2 h-2 bg-[var(--main-color)] rounded-full mr-2" />
                     {title}
-                    <span className="text-sm bg-[#e2e2e2]">&nbsp; {description && description}</span>
+                    <span className="text-sm text-[#e2e2e2]">&nbsp; {description && description}</span>
                 </h1>
                 {content && (
                     <div

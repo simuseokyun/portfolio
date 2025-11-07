@@ -18,8 +18,9 @@ const CareerDB: CareerData = {
             title: '인프런 독학과정',
             year: '2023 - 2024',
             content: [
-                'React, Next.js, TypeScript 등 프론트엔드 프레임워크 및 라이브러리 학습',
-                'Node.js, Express 등 서버와의 통신 구조 학습',
+                'React, Next.js, TypeScript를 활용해 컴포넌트 기반의 웹 애플리케이션 구조 학습',
+                'Node.js와 Express를 이용해 서버와 클라이언트 간의 통신 흐름을 이해하고 RESTful API를 구현',
+                '프론트엔드와 백엔드 간 데이터 흐름을 직접 연결하며, 전체적인 웹 서비스 동작 원리 학습',
             ],
         },
     ],

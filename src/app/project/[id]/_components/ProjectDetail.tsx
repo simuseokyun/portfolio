@@ -10,7 +10,7 @@ export default function ProjectDetail({ project }: { project?: ProjectDB }) {
         purpose = '',
         features = [],
         skillBackground = [],
-        structure = '/assets/CloseButton.png',
+        structure = '',
         design = [],
         troubleShooting = [],
     } = project ?? {};

@@ -178,17 +178,15 @@ const projectDB: ProjectDB[] = [
         github: 'https://github.com/simuseokyun/simuseokyun.github.io/tree/main/Weather',
         web: 'https://simuseokyun.github.io/Weather/',
         purpose:
-            '문서화하는 것도 의미 있지만, 보다 직관적이고 접근성이 좋은 웹사이트 형태로 제작해보고 싶었습니다. 또한, 이 과정에서 Next.js의 서버/클라이언트 혼합 렌더링을 활용하여 빠르고 효율적인 페이지 렌더링을 경험하고자 했습니다.',
+            '단순한 날씨 데이터 조회를 넘어, 날씨 변화에 따라 시각적으로 반응하는 인터랙티브한 경험을 제공하기 위해 제작하였고 이를 통해 API 활용 능력과 프론트엔드 개발 역량을 동시에 향상시키고자 했습니다.',
         features: [
-            'Next.js의 서버/클라이언트 혼합 렌더링을 활용한 빠른 페이지 로딩과 SEO 최적화',
-            'Framer Motion을 이용한 부드러운 애니메이션 효과',
-            '반응형 디자인과 웹 접근성 고려',
-            '다크 모드 구현',
+            '반응형 디자인과 웹 접근성을 고려한 UI 설계 및 구현',
+            'OpenWeatherMap API를 이용한 실시간 날씨 조회 기능 구현',
+            '검색 지역의 날씨(예: 비, 눈)에 따라 동적으로 변하는 배경 효과 구현',
         ],
         design: [
             { title: '반응형 디자인', image: '/assets/ResponsibleDesignP.gif' },
-            { title: 'Smooth-Scolling을 통한 네비게이션 이동', image: '/assets/Nav.gif' },
-            { title: '인터셉팅 라우트와 Framer-motion을 활용한 모달', image: '/assets/Motion.gif' },
+            { title: '날씨 조회', image: '/assets/Nav.gif' },
         ],
     },
 ];

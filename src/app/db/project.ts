@@ -3,7 +3,7 @@ import { ProjectDB } from '../types/type';
 const projectDB: ProjectDB[] = [
     {
         id: 1,
-        title: '음악 스트리밍 앱',
+        title: 'Playlio',
         description:
             'Spotify Web API를 활용해 사용자의 음악 데이터를 시각화하고 일정 시간 음악을 스트리밍할 수 있는 리액트 기반 웹 애플리케이션',
         image: '/assets/ProjectOne.jpg',
@@ -14,7 +14,6 @@ const projectDB: ProjectDB[] = [
                 '/assets/Tailwind.svg',
                 '/assets/TanstackQuery.png',
                 '/assets/Zustand.webp',
-                '/assets/AWS.svg',
             ],
             back: ['/assets/Node.js.svg', '/assets/Express.svg'],
             deploy: ['/assets/AWS.svg'],

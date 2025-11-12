@@ -20,85 +20,50 @@
 
 ![메인 화면](public/assets/MainPage.png)
 
-이 프로젝트는 **Spotify Web API**를 활용해 사용자의 음악 데이터를 시각화하고,플레이리스트,아티스트 정보 등을 제공하고 짧게나마 음악을 스트리밍할 수 있는 React 기반 웹 애플리케이션입니다.
+Next.js로 제작한 개인 포트폴리오 사이트입니다. 간략한 저의 정보와 작업물을 한눈에 확인할 수 있습니다. 새로운 프로젝트를 완성할 때마다 프로젝트 섹션에 업데이트하여 기록할 예정입니다.
 
 ## 기획 의도
 
-공개 API를 활용한 실질적인 서비스 구축 경험을 목표로 프로젝트를 기획했습니다. 특히, 음악에 대한 개인적인 관심을 바탕으로, 스트리밍 기능을 포함한 음악 애플리케이션을 직접 구현함으로써 프론트엔드와 백엔드 기술을 유기적으로 결합해보는 데 중점을 두었습니다.이를 통해 사용자 인증, 데이터 처리, 상태 관리 등 실제 서비스에서 요구되는 다양한 기능을 경험할 수 있었고, 직관적인 UI/UX 설계와 반응형 디자인 적용을 통해 사용자가 편리하게 서비스를 이용할 수 있도록 고민했습니다..
+블로그를 작성하는 등 문서화하는 것도 의미 있지만, 보다 직관적이고 접근성이 좋은 웹사이트 형태로 나만의 개발 공간을 제작해보고 싶었습니다. 또한, 이 과정에서 Next.js의 서버/클라이언트 혼합 렌더링을 활용하여 빠르고 효율적인 페이지 렌더링을 경험하고자 했습니다.
 
 ## 핵심 기능
 
-### Non-Member (로그인 하지 않은 유저)
-
-- 트랙,앨범,아티스트 검색기능
-- 음악 스트리밍 (플레이어 조작 가능)
-
-### OAUTH
-
-- OAuth2.0을 이용해 간편하고 안전한 소셜 로그인 (google 계정으로 회원가입, 로그인)
-
-### Member (로그인 한 유저)
-
-현재 스포티파이 API 정책상 개발자(본인)가 앱에 등록한 회원만 이 기능을 사용할 수 있습니다.
-유저 기능을 사용하시려면 "sim31059999@gmail.com"로 구글 이메일을 보내주세요. 불편을 드려서 죄송합니다
-
-- 플레이리스트 조회,생성,삭제 기능
-- 플레이리스트 내 트랙 추가,삭제 기능
-- 아티스트/앨범 팔로우 및 언팔로우
+- 반응형 디자인
+- 다크모드 구현
+- Framer Motion을 이용한 부드러운 애니메이션 효과
+- 인터셉팅 라우트를 이용한 UI/UX 최적화
 
 ## 기술 스택
 
 ### Front-End
 
-- React
-- React-Router
-- Tanstack-Query
+- Next.js
 - Tailwind
 - Typescript
-- Zustand
-
-### Back-End
-
-- Node.js
-- Express
+- Framer-motion
 
 ### Deployment
 
-- AWS(EC2)
+- Vercel
 
 ## 프로젝트 구조
 
 ### 클라이언트
 
 ```bash
-client/
-└── src/
-    ├── components/            # Spotify, 사용자 등 API 요청
-    ├── hooks/     # 재사용 UI 컴포넌트
-    ├── pages/          # 커스텀 훅
-    ├── routes/          # 페이지 컴포넌트
-    ├── services/          # Zustand 전역 상태 관리
-    ├── store/         # 전역 스타일 또는 Tailwind 설정
-    ├── styles/
-    ├── types/
-    └── utils/
-```
-
-### 서버
-
-```bash
-server/
-└── src/
-    ├── errors/            # Spotify, 사용자 등 API 요청
-    ├── routes/     # 재사용 UI 컴포넌트
-    ├── tuils/          # 커스텀 훅
-    └── types/        # 페이지 컴포넌트
+src/
+└── app/
+     ├── _components   # 재사용 가능한 UI 컴포넌트
+     ├── @Modal        # 인터셉팅 라우트를 이용한 모달 관련 컴포넌트
+     ├── db            # 정적 데이터 모음 (Vercel 서버리스로 리팩토링 예정)
+     ├── styles        # 전역 스타일, Tailwind 설정
+     └── types         # 타입 정의
 ```
 
 ## 프로젝트 설치
 
 ```bash
-git clone https://github.com/username/project.git
+git clone https://github.com/simuseokyun/portfolio.git
 ```
 
 ### 의존성 설치
